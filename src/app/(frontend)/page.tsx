@@ -1,5 +1,6 @@
 "use client";
 
+import { Routes } from "@/constants";
 import { Container, Typography, Button, Box, Stack } from "@mui/material";
 
 export default function Landing() {
@@ -41,12 +42,11 @@ export default function Landing() {
       </Typography>
 
       <Stack spacing={1} direction="row" mt={4}>
-        {/* login and signup */}
-        <Button variant="contained" color="primary" href="/auth/login">
+        <Button variant="contained" color="primary" href={Routes.login}>
           Login
         </Button>
-        <Button variant="contained" color="primary" href="/auth/signup">
-          Sign Up
+        <Button variant="contained" color="primary" href={Routes.register}>
+          Register
         </Button>
       </Stack>
     </Container>
