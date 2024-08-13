@@ -47,7 +47,7 @@ yarn install
 
 ### Environment Variables
 
-Create a `.env.local` file in the root of your project and add the following environment variables:
+Create a `.env` file in the root of your project and add the following environment variables:
 
 ```env
 DATABASE_URL = "https://my_pocketbase_url.com"
