@@ -127,7 +127,7 @@ yarn start
 │   ├── components/   # Reusable components
 │   ├── hooks/        # Custom React hooks
 │   ├── lib/          # Libraries and utilities
-│   ├── stores/       # Global state management (e.g., Zustand, Redux)
+│   ├── stores/       # Global state management (e.g., Zustand)
 │   ├── constants.ts  # Global constants
 │   ├── env.ts        # Environment variable handling
 │   ├── utils.ts      # Utility functions
