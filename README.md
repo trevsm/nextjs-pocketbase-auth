@@ -47,11 +47,35 @@ yarn install
 
 ### Environment Variables
 
-Create a `.env.local` file in the root of the project and add your PocketBase URL:
+Create a `.env.local` file in the root of your project and add the following environment variables:
 
 ```env
-NEXT_PUBLIC_POCKETBASE_URL=http://localhost:8090
+DATABASE_URL = "https://my_pocketbase_url.com"
+PB_TOKEN = "eyJh...."
+
+REFRESH_TOKEN_SECRET = "secret"
+ACCESS_TOKEN_SECRET = "secret"
+
+NEXT_PUBLIC_BASE_URL = "http://localhost:3000"
+
+SMTP_HOST = "smtp.gmail.com"
+SMTP_PORT = 587
+SMTP_USER = "example@gmail.com"
+SMTP_PASS = "password123"
 ```
+
+### PocketBase Configuration
+
+1. **Create a New PocketBase Instance:**
+
+   - Download and set up PocketBase by following the official documentation: [PocketBase Documentation](https://pocketbase.io/docs/).
+
+2. **Import Schema:**
+
+   - In your PocketBase admin dashboard, import the `pb_schema.json` file from this repository. This file contains all the necessary collections and schema required for the authentication system to work.
+
+3. **Start Your PocketBase Instance:**
+   - Run your PocketBase instance and ensure it's accessible at the URL you've configured in the `DATABASE_URL` environment variable.
 
 ### Running the Development Server
 
