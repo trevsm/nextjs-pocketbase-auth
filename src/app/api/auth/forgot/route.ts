@@ -7,7 +7,14 @@ import { ENV } from "@/env";
 import { Routes } from "@/constants";
 
 export async function POST(request: NextRequest) {
-  const { email } = await request.json();
+  let email;
+
+  try {
+    const body = await request.json();
+    email = body.email;
+  } catch (error) {
+    return Response.json({ error: "Invalid body" }, { status: 400 });
+  }
 
   try {
     // First, check if a user with this email even exists

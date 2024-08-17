@@ -6,7 +6,30 @@ import { Tokens } from "@/constants";
 import { toPublicUser, User } from "@/types";
 
 export async function POST(request: Request) {
-  const { email, username, password } = await request.json();
+  let email, username, password;
+
+  try {
+    const body = await request.json();
+    email = body.email;
+    username = body.username;
+    password = body.password;
+  } catch (e) {
+    return Response.json(
+      {
+        error: "Invalid JSON",
+      },
+      { status: 400 }
+    );
+  }
+
+  if ((!email && !username) || !password) {
+    return Response.json(
+      {
+        error: "Please provide an email or username and a password",
+      },
+      { status: 400 }
+    );
+  }
 
   const allUsers: User[] = await pb.collection("users").getFullList();
   const user = allUsers.find(

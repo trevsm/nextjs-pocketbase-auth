@@ -168,6 +168,7 @@ export default function ForgotPassword({ searchParams }: any) {
             <PasswordField
               label="New Password"
               value={new_password}
+              autoComplete="off"
               onChange={(e) => setNewPassword(e.target.value)}
               fullWidth
               required

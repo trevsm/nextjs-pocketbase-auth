@@ -132,6 +132,7 @@ export default function Login({ searchParams }: any) {
               <PasswordField
                 label="Password"
                 value={password}
+                autoComplete="off"
                 onChange={(e: any) => setPassword(e.target.value)}
                 fullWidth
                 required

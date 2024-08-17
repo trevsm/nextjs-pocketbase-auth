@@ -66,6 +66,7 @@ export default function Login({ searchParams }: any) {
           label="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          autoComplete="off"
           fullWidth
           required
         />
